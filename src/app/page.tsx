@@ -4,6 +4,7 @@ import Benefits from "./benefits";
 import Features from "./features";
 import Integrations from "./Integrations";
 import PriceAndFaq from "./PriceAndFaq";
+import Background from "../../components/Background";
 
 export default function Home() {
   const iconData = [
@@ -54,14 +55,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="flex items-center justify-center overflow-y-clip">
+        <div className="absolute z-10">
           <Image
             src="/hero.webp"
             alt="hero photo"
-            width={900}
-            height={800}
+            width={700}
+            height={700}
             className="object-cover image-shadow"
           />
+        </div>
+        <Background/>
         </div>
         <div className="py-10 w-full md:py-20">
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden marquee py-10">
@@ -129,23 +133,27 @@ export default function Home() {
       <PriceAndFaq />
 
       <div className="h-full w-full flex flex-col items-center justify-center gap-8 mx-auto max-w-2xl text-center py-20">
-        <div className="flex flex-col gap-2">
-          <h1 className="font-bold text-2xl lg:text-5xl">
-            Build Beatifull Websites
-          </h1>
-          <p className="text-gray-500 text-sm lg:text-xl">
-            Ground give you the blocks needed to create a truly professional
-            thing for your saas without thinking twice
-          </p>
+        <div className="absolute z-10 flex items-center justify-center flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <h1 className="font-bold text-3xl lg:text-5xl">
+              Build Beatifull Websites
+            </h1>
+            <p className="text-gray-500 text-xl">
+              Ground give you the blocks needed to create a truly professional
+              thing for your saas without thinking twice
+            </p>
+          </div>
+          <div className="flex gap-5">
+            <button className="bg-white rounded-full py-2 px-10">
+              Get this template
+            </button>
+            <button className="bg-black rounded-full py-2 px-10 text-white">
+              Continue on Ground
+            </button>
+          </div>
         </div>
-        <div className="flex gap-5">
-          <button className="bg-white rounded-full py-2 px-10">
-            Get this template
-          </button>
-          <button className="bg-black rounded-full py-2 px-10 text-white">
-            Continue on Ground
-          </button>
-        </div>
+
+        <Background />
       </div>
     </>
   );
