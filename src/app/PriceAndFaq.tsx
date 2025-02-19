@@ -1,23 +1,22 @@
 "use client";
 import { useState } from "react";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";
-import data from "../../data/data.json";
+import { Faqs } from './index'
 
 const PriceAndFaq = () => {
   const [activeFaqs, setActiveFaqs] = useState<number | null>(null);
-  const faqs = data.faqs;
 
   return (
     <div className="px-5 py-6 flex flex-col gap-10">
       <div className="flex flex-col gap-16 items-center justify-center">
         <div className="flex flex-col gap-4 items-center mx-auto max-w-2xl text-center">
-          <h1 className="font-bold text-xl lg:text-5xl">
+          <h1 className="font-bold text-2xl lg:text-5xl">
             Pricing that&apos;s simple, predictable and built to scale
           </h1>
           <p className="text-gray-500 text-sm lg:text-xl">
             Ground give you the blocks needed to create a truly professional
             thing for your saas without you worring on the design in the long
-            run{" "}
+            run
           </p>
         </div>
         <div className="flex flex-col lg:flex-row gap-5 mx-auto max-w-3xl">
@@ -58,16 +57,16 @@ const PriceAndFaq = () => {
                   <Check color="blue" /> Budgeting and expence tracking
                 </p>
                 <p className="flex gap-2">
-                  <Check color="blue" /> Budgeting and expence tracking
+                  <Check color="blue" /> Automated Investing
                 </p>
                 <p className="flex gap-2">
-                  <Check color="blue" /> Budgeting and expence tracking
+                  <Check color="blue" /> Unlimited activity notifications
                 </p>
                 <p className="flex gap-2">
-                  <Check color="blue" /> Budgeting and expence tracking
+                  <Check color="blue" /> Credit score monitoring
                 </p>
                 <p className="flex gap-2">
-                  <Check color="blue" /> Budgeting and expence tracking
+                  <Check color="blue" /> Bank transactions imports  
                 </p>
               </div>
               <button className="px-10 py-2 bg-slate-900 text-white flex items-center justify-center rounded-full">
@@ -79,50 +78,43 @@ const PriceAndFaq = () => {
       </div>
 
       <div className="flex flex-col gap-10 pb-20 lg:px-20">
-        <h1 className="font-bold text-5xl text-center py-6">
+        <h1 className="font-bold text-2xl lg:text-5xl text-center py-6">
           Frequently Asked Questions
         </h1>
         <div className="h-full w-full overflow-x-clip">
-        {faqs.map((faq) => (
-          <div key={faq.id} className="border-b md:px-10 py-5">
-            <div
-              className="flex justify-between"
-              onClick={() => {
-                console.log(`Clicked on FAQ 1ID: ${faq.id}`);
-                setActiveFaqs(activeFaqs === faq.id ? null : faq.id);
-              }}
-            >
-              <div>
-                <h4 className="font-bold text-sm lg:text-xl">{faq.title}</h4>
+          {Faqs.map((faq) => (
+            <div key={faq.id} className="border-b md:px-10 py-5">
+              <div
+                className="flex justify-between"
+                onClick={() => {
+                  console.log(`Clicked on FAQ 1ID: ${faq.id}`);
+                  console.log("Clicked!");
+                  setActiveFaqs(activeFaqs === faq.id ? null : faq.id);
+                }}
+              >
+                <div>
+                  <h4 className="font-bold lg:text-xl">{faq.title}</h4>
+                </div>
+                {activeFaqs === faq.id ? (
+                  <ChevronUp size={20} />
+                ) : (
+                  <ChevronDown size={20} />
+                )}
               </div>
-              {activeFaqs === faq.id ? (
-                <ChevronUp
-                  size={20}
-                  onClick={() => {
-                    console.log(`Clicked on FAQ 2ID: ${faq.id}`);
-                    setActiveFaqs(activeFaqs === faq.id ? null : faq.id);
-                  }}
-                />
-              ) : (
-                <ChevronDown
-                  size={20}
-                  onClick={() => {
-                    console.log(`Clicked on FAQ 3ID: ${faq.id}`);
-                    setActiveFaqs(activeFaqs === faq.id ? null : faq.id);
-                  }}
-                />
-              )}
+              <div
+                className={`transition-all duration-300 overflow-hidden ${
+                  activeFaqs === faq.id ? "opacity-100" : "max-h-0 opacity-0"
+                }`}
+              >
+                <p className="text-gray-500 text-sm py-2">{faq.text}</p>
+              </div>
             </div>
-            <div
-              className={`transition-all duration-300 overflow-hidden ${
-                activeFaqs === faq.id ? "opacity-100" : "max-h-0 opacity-0"
-              }`}
-            >
-              <p className="text-gray-500 text-sm py-2">{faq.text}</p>
-            </div>
-          </div>
-        ))}
+          ))}
         </div>
+        <p className="text-center">
+          Have more questions?{" "}
+          <span className="text-blue-700">Contact our Support</span>
+        </p>
       </div>
     </div>
   );

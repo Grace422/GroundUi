@@ -4,9 +4,6 @@ import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleNavbar = () => {
-    setIsOpen(!isOpen);
-  };
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +17,14 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
   return (
+    <>
     <div className="h-full w-full fixed z-10">
       <nav
         className={`flex items-center justify-between py-4 px-8
@@ -33,11 +37,11 @@ const Navbar = () => {
             <h1 className="font-bold text-2xl">G</h1>
           </div>
         </Link>
-        <div>
+        <div className="lg:hidden absolute right-20">
           {isOpen ? (
-            <X size={20} onClick={toggleNavbar} />
+            <X size={30} onClick={toggleNavbar} />
           ) : (
-            <Menu size={20} onClick={toggleNavbar} />
+            <Menu size={30} onClick={toggleNavbar} />
           )}
         </div>
         <div className="flex items-center justify-between">
@@ -60,26 +64,30 @@ const Navbar = () => {
           <button className="text-white text-sm">Get this Template</button>
         </div>
       </nav>
-      <div
-        className={`flex items-center justify-between transition-transform duration-[750ms] ease-out
-        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
+    </div>
+    
+    <div className="px-8 lg:hidden">
+    <div
+        className={`transition-transform duration-[750ms] ease-out fixed top-20 border p-4 bg-white rounded-md w-[90%] z-10
+        ${isOpen ? "opacity-100  scale-100" : "opacity-0 scale-95"}`}
       >
-        <ul className="hidden gap-8 items-center lg:flex text-xl">
-          <Link href="/pricing">
+        <ul className="flex flex-col gap-4">
+          <Link href="/pricing" onClick={closeNavbar}>
             <li>Pricing</li>
           </Link>
-          <Link href="/feature">
+          <Link href="/feature" onClick={closeNavbar}>
             <li>Feature</li>
           </Link>
-          <Link href="/career">
+          <Link href="/career" onClick={closeNavbar}>
             <li>Career</li>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={closeNavbar}>
             <li>Contact</li>
           </Link>
         </ul>
       </div>
-    </div>
+      </div>
+    </>
   );
 };
 

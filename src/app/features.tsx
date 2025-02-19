@@ -1,19 +1,18 @@
-import data from "../../data/data.json";
+import { Icons } from './index'
 const Features = () => {
-  const features = data.features;
   return (
     <div className="px-10 py-10 bg-[#f7f6f4]">
-      <h2 className="text-center text-4xl font-bold">Loaded with more features</h2>
+      <h2 className="text-center text-2xl lg:text-4xl font-bold py-8">Loaded with more features</h2>
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 py-5">
-        {features.map((feature, index) => (
+        {Icons.map((feature, index) => (
           <div
-            className="flex gap-8 px-2 py-2 border rounded-lg bg-white items-center"
+            className="flex gap-4 px-4 py-4 border rounded-lg bg-white"
             key={index}
           >
-            <div></div>
-            <div className="flex flex-col items-start justify-between">
-              <h3 className="text-xl">{feature.title}</h3>
-              <p className="text-gray-500 text-start text-base md:text-lg lg:text-sm">
+            <feature.icon color='blue'/>
+            <div className="flex flex-col items-start gap-4">
+              <h3 className="text-sm">{feature.title}</h3>
+              <p className="text-gray-500 text-start text-sm md:text-lg lg:text-sm">
                 {feature.text}
               </p>
             </div>
