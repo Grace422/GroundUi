@@ -13,7 +13,7 @@ const Benefits = () => {
   return (
     <div className="flex flex-col gap-20 px-10 py-10">
       <div className="flex flex-col lg:flex-row mt-6">
-        <div className="flex flex-col border-r flex-[0.5] cursor-pointer rounded-tl-2xl rounded-bl-2xl bg-[#f7f6f4]">
+        <div className="flex flex-col border-r flex-[0.5] cursor-pointer rounded-tl-2xl lg:rounded-bl-2xl bg-[#f7f6f4]">
           {Banks.map((bank, index) => (
             <div
               key={index}
@@ -33,7 +33,7 @@ const Benefits = () => {
             </div>
           ))}
         </div>
-        <div className="flex-1 bg-gradient-to-b from-[#f7f6f4] via-[#f7f6f4] to-transparent rounded-tr-2xl rounded-br-2xl flex items-center justify-center">
+        <div className="flex-1 bg-gradient-to-b from-[#f7f6f4] via-[#f7f6f4] to-transparent lg:rounded-tr-2xl rounded-br-2xl flex items-center justify-center p-16">
           <div className="relative w-96 h-96">
             {images.map((image, index) => (
               <Image
@@ -76,7 +76,7 @@ const Benefits = () => {
         </div>
       </div>
 
-      <div className="flex gap-20 items-center flex-col py-10 lg:py-20 px-10 lg:flex-row lg:gap-40">
+      <div className="flex gap-20 items-center flex-col lg:py-20 lg:flex-row lg:gap-40">
         <div className="border flex-1 min-h-[450px] w-full min-w-[280px] border-gray-200 bg-[#f7f6f4] rounded-2xl lg:order-2" />
         <div className="flex flex-col gap-5 lg:justify-center flex-1 lg:order-1">
           <p className="text-blue-700">BENEFITS</p>

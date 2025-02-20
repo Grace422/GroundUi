@@ -5,18 +5,9 @@ import Features from "./features";
 import Integrations from "./Integrations";
 import PriceAndFaq from "./PriceAndFaq";
 import Background from "../../components/Background";
+import { TopIcons  } from "./index";
 
 export default function Home() {
-  const iconData = [
-    { icon: "/apple.png", name: "Apple" },
-    { icon: "/github.png", name: "Github" },
-    { icon: "/instagram.png", name: "Instagram" },
-    { icon: "/linkedin.png", name: "Linkedin" },
-    { icon: "/twitter.png", name: "Twitter" },
-    { icon: "/facebook.png", name: "Facebook" },
-    { icon: "/youtube.png", name: "Youtube" },
-    { icon: "/messager.png", name: "Messenger" },
-  ];
   return (
     <>
       <div className="flex flex-col gap-10 items-center justify-center bg-[#f7f6f4]">
@@ -55,14 +46,14 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center justify-center overflow-y-clip">
+        <div className="flex items-center justify-center">
         <div className="absolute z-10">
           <Image
             src="/hero.webp"
             alt="hero photo"
             width={700}
             height={700}
-            className="object-cover image-shadow"
+            className="object-cover image-shadow flex items-center justify-center"
           />
         </div>
         <Background/>
@@ -71,16 +62,12 @@ export default function Home() {
           <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden marquee py-10">
             <div className="w-full h-full flex overflow-hidden p-2 flex-row gap-20 marquee-content">
               <div className="flex flex-row gap-20">
-                {iconData.map((data, index) => (
+                {TopIcons.map((data, index) => (
                   <div
                     key={index}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <Image
-                      src={data.icon}
-                      alt={data.name}
-                      width={100}
-                      height={100}
+                    <data.icon 
                       className="w-10 text-white dark:text-black"
                     />
                     <p className="text-white dark:text-black">{data.name}</p>
@@ -88,16 +75,12 @@ export default function Home() {
                 ))}
               </div>
               <div className="flex flex-row gap-20">
-                {iconData.map((data, index) => (
+                {TopIcons.map((data, index) => (
                   <div
-                    key={index + iconData.length}
+                    key={index + TopIcons.length}
                     className="flex flex-row items-center justify-center gap-2"
                   >
-                    <Image
-                      src={data.icon}
-                      alt={data.name}
-                      width={100}
-                      height={100}
+                    <data.icon 
                       className="w-10"
                     />
                     <p className="text-white dark:text-black">{data.name}</p>
@@ -111,7 +94,7 @@ export default function Home() {
 
       <div className="flex items-center flex-col md:flex-row px-10 py-32 justify-between gap-10 border-b">
         <div className="lg:w-1/2">
-          <h1 className="font-bold text-4xl">
+          <h1 className="font-bold text-4xl text-center lg:text-start">
             Top used financial app by millions of happy users
           </h1>
         </div>

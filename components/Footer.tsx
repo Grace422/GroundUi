@@ -4,8 +4,8 @@ const Footer = () => {
             <div className="flex flex-col pt-20 md:px-10 md:border-r flex-1 pb-20 gap-40 order-2 lg:order-1">
                 <div className="flex flex-col gap-4 md:max-w-md">
                     <p>Suscribe to our newsletter</p>
-                    <div className="flex gap-2 flex-col md:flex-row items-center w-full">
-                        <input type="text" placeholder="example@gmail.com" className="border bg-transparent px-2 py-2 w-full rounded-md"/>
+                    <div className="flex gap-2 flex-col md:flex-row items-center w-full z-50 relative">
+                        <input type="text" placeholder="example@gmail.com" className="border bg-transparent px-2 py-2 w-full rounded-md outline-none"/>
                         <button className="text-white bg-slate-900 opacity-45 px-3 py-2 text-sm rounded-md w-full lg:w-auto">Submit</button>
                     </div>
                     <p className="text-gray-500">By Clicking the button you consent to processing to you personal data</p>

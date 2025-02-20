@@ -1,3 +1,5 @@
+"use client"
+import { useState, useEffect } from "react";
 import {
   Star,
   Calendar,
@@ -21,11 +23,38 @@ const icons = [
   Clock,
 ];
 const Integrations = () => {
+  const [displayCount1, setDisplayCount1] = useState(8);
+  const [displayCount2, setDisplayCount2] = useState(8);
+  const [displayCount3, setDisplayCount3] = useState(8);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setDisplayCount1(4); 
+        setDisplayCount2(3); 
+        setDisplayCount3(2); 
+      } else if (window.innerWidth < 768) {
+        setDisplayCount1(6); 
+        setDisplayCount2(5); 
+        setDisplayCount3(4); 
+      } else {
+        setDisplayCount1(8);
+        setDisplayCount2(7); 
+        setDisplayCount3(6); 
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="px-10 py-20 flex flex-col gap-16">
       <div className="h-full w-full flex flex-col items-center justify-center gap-10">
-        <div className="flex flex-col gap-4 items-center mx-auto max-w-2xl">
-          <h1 className="font-bold text-4xl lg:text-5xl">
+        <div className="flex flex-col gap-4 items-center mx-auto max-w-2xl text-center">
+          <h1 className="font-bold text-3xl lg:text-5xl">
             Over 100+ Integrations
           </h1>
           <p className="text-gray-500 text-xl text-center">
@@ -35,39 +64,39 @@ const Integrations = () => {
         </div>
         <div className="mx-auto flex flex-col gap-5 w-fit relative">
           <div className="flex gap-10 mx-auto w-fit ">
-            {icons.slice(0, 8).map((Icon, index) => (
+            {icons.slice(0, displayCount1).map((Icon, index) => (
               <div
                 key={index}
-                className="rounded-full bg-white size-16 flex items-center justify-center shadow-xl shadow-slate-600"
+                className="rounded-full bg-white size-16 flex items-center justify-center shadow-sm shadow-slate-200"
               >
                 <Icon className="w-8 h-8" />
               </div>
             ))}
           </div>
           <div className="flex gap-10 mx-auto w-fit">
-            {icons.slice(0, 7).map((Icon, index) => (
+            {icons.slice(0, displayCount2).map((Icon, index) => (
               <div
                 key={index}
-                className="rounded-full bg-white size-16 flex items-center justify-center shadow-xl shadow-slate-600"
+                className="rounded-full bg-white size-16 flex items-center justify-center shadow-sm shadow-slate-200"
               >
                 <Icon className="w-8 h-8" />
               </div>
             ))}
           </div>
           <div className="flex gap-10 mx-auto w-fit">
-            {icons.slice(0, 6).map((Icon, index) => (
+            {icons.slice(0, displayCount3).map((Icon, index) => (
               <div
                 key={index}
-                className="rounded-full bg-white size-16 flex items-center justify-center shadow-xl shadow-slate-600"
+                className="rounded-full bg-white size-16 flex items-center justify-center shadow-sm shadow-slate-200"
               >
-                <Icon className="w-8 h-8" />
+                <Icon className="w-8 h-8"/>
               </div>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full overflow-hidden relative  ">
+      <div className="flex items-center justify-center w-full overflow-hidden relative">
         <div className="z-10 rounded-2xl py-16 flex flex-col items-center justify-center absolute">
           <h1 className="font-bold text-2xl lg:text-5xl text-white px-2 text-center">
             Trusted by 21,000+ customers
