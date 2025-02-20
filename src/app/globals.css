@@ -32,6 +32,7 @@ body {
   @apply border border-white/20;
 }
 .marquee-bottom .marquee-content {
+  overflow: hidden;
   animation-direction: reverse;
 }
 .marquee {

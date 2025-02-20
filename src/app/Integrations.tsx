@@ -66,71 +66,22 @@ const Integrations = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-700 rounded-2xl py-16 flex flex-col items-center justify-center">
-        <h1 className="font-bold text-2xl lg:text-5xl text-white px-2 text-center">
-          Trusted by 21,000+ customers
-        </h1>
-        <div className="w-full py-10 md:py-20">
-          <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
-            <div className="marquee">
-              <div className="group flex gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s] marquee-content bg-transparent text-white dark:text-black">
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <figure
-                    key={index}
-                    className="relative w-80 p-4 borders overflow-hidden rounded-xl cursor-pointer bg-transparent"
-                  >
-                    <div className="flex flex-col gap-4 text-white">
-                      <div className="flex gap-1">
-                        {Array.from({ length: 5 }).map((_, index) => (
-                          <div key={index}>
-                            <Star color="yellow" />
-                          </div>
-                        ))}
-                      </div>
-                      <p className="text-sm font-medium">
-                        "Ground took the guesswork out of investing for me.
-                        I&apos;m seeing real returns with no hassle."
-                      </p>
-                      <p className="text-sm font-medium text-white">
-                        @username
-                      </p>
-                    </div>
-                  </figure>
-                ))}
-                {Array.from({ length: 10 }).map((_, index) => (
-                  <figure
-                    key={index}
-                    className="relative w-80 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl bg-transparent cursor-pointer"
-                  >
-                    <div className="flex flex-col gap-4 text-white">
-                      <div className="flex gap-1">
-                        {Array.from({ length: 5 }).map((_, index) => (
-                          <div key={index}>
-                            <Star color="yellow" />
-                          </div>
-                        ))}
-                      </div>
-                      <p className="text-sm font-medium">
-                        "Ground took the guesswork out of investing for me.
-                        I&apos;m seeing real returns with no hassle."
-                      </p>
-                      <p className="text-sm font-medium text-white">
-                        @username
-                      </p>
-                    </div>
-                  </figure>
-                ))}
-              </div>
-            </div>
-            <div className="marquee-bottom text-white dark:text-black">
-              <div className="group flex  gap-4 overflow-hidden p-2 select-none flex-row [--duration.20s] marquee-content">
-                <div className="flex gap-4 marquee-inner flex-row">
+
+      <div className="flex items-center justify-center w-full overflow-hidden relative">
+        <div className="z-10 rounded-2xl py-16 flex flex-col items-center justify-center absolute">
+          <h1 className="font-bold text-2xl lg:text-5xl text-white px-2 text-center">
+            Trusted by 21,000+ customers
+          </h1>
+          <div className="w-screen py-10 md:py-20 overflow-hidden h-screen ">
+            <div className="relative h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
+              <div className="marquee">
+                <div className="group flex gap-4 p-2 select-none flex-row [--duration.20s] marquee-content bg-transparent text-white dark:text-black">
                   {Array.from({ length: 10 }).map((_, index) => (
                     <figure
                       key={index}
-                      className="relative w-80 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl cursor-pointe bg-transparent"
+                      className="relative w-80 p-4 borders rounded-xl cursor-pointer bg-transparent"
                     >
-                      <div className="flex flex-col gap-4">
+                      <div className="flex flex-col gap-4 text-white">
                         <div className="flex gap-1">
                           {Array.from({ length: 5 }).map((_, index) => (
                             <div key={index}>
@@ -138,9 +89,32 @@ const Integrations = () => {
                             </div>
                           ))}
                         </div>
+                        <p className="text-sm font-medium">
+                        &quot;Ground took the guesswork out of investing for me.
+                          I&apos;m seeing real returns with no hassle.&quot;
+                        </p>
                         <p className="text-sm font-medium text-white">
-                          "Ground took the guesswork out of investing for me.
-                          I&apos;m seeing real returns with no hassle."
+                          @username
+                        </p>
+                      </div>
+                    </figure>
+                  ))}
+                  {Array.from({ length: 10 }).map((_, index) => (
+                    <figure
+                      key={index}
+                      className="relative w-80 p-4 borders over:lg-zinc-50/[.15] rounded-xl bg-transparent cursor-pointer"
+                    >
+                      <div className="flex flex-col gap-4 text-white">
+                        <div className="flex gap-1">
+                          {Array.from({ length: 5 }).map((_, index) => (
+                            <div key={index}>
+                              <Star color="yellow" />
+                            </div>
+                          ))}
+                        </div>
+                        <p className="text-sm font-medium">
+                        &quot;Ground took the guesswork out of investing for me.
+                          I&apos;m seeing real returns with no hassle.&quot;
                         </p>
                         <p className="text-sm font-medium text-white">
                           @username
@@ -149,39 +123,82 @@ const Integrations = () => {
                     </figure>
                   ))}
                 </div>
-                <div className="flex gap-4 marquee-inner flex-row">
-                  {Array.from({ length: 10 }).map((_, index) => (
-                    <figure
-                      key={index}
-                      className="relative w-80 p-4 borders over:lg-zinc-50/[.15] overflow-hidden rounded-xl cursor-pointer bg-transparent"
-                    >
-                      <div className="flex flex-col gap-4">
-                        <div className="flex gap-1">
-                          {Array.from({ length: 5 }).map((_, index) => (
-                            <div key={index}>
-                              <Star color="yellow" />
-                            </div>
-                          ))}
+              </div>
+              <div className="marquee-bottom text-white dark:text-black">
+                <div className="group flex gap-4 p-2 select-none flex-row [--duration.20s] marquee-content">
+                  <div className="flex gap-4 marquee-inner flex-row">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                      <figure
+                        key={index}
+                        className="relative w-80 p-4 borders over:lg-zinc-50/[.15] rounded-xl cursor-pointe bg-transparent"
+                      >
+                        <div className="flex flex-col gap-4">
+                          <div className="flex gap-1">
+                            {Array.from({ length: 5 }).map((_, index) => (
+                              <div key={index}>
+                                <Star color="yellow" />
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-sm font-medium text-white">
+                            &quot;Ground took the guesswork out of investing for me.
+                            I&apos;m seeing real returns with no hassle.&quot;
+                          </p>
+                          <p className="text-sm font-medium text-white">
+                            @username
+                          </p>
                         </div>
-                        <p className="text-sm font-medium text-white">
-                          "Ground took the guesswork out of investing for me.
-                          I&apos;m seeing real returns with no hassle."
-                        </p>
-                        <p className="text-sm font-medium text-white">
-                          @username
-                        </p>
-                      </div>
-                    </figure>
-                  ))}
+                      </figure>
+                    ))}
+                  </div>
+                  <div className="flex gap-4 marquee-inner flex-row">
+                    {Array.from({ length: 10 }).map((_, index) => (
+                      <figure
+                        key={index}
+                        className="relative w-80 p-4 borders over:lg-zinc-50/[.15] rounded-xl cursor-pointer bg-transparent"
+                      >
+                        <div className="flex flex-col gap-4">
+                          <div className="flex gap-1">
+                            {Array.from({ length: 5 }).map((_, index) => (
+                              <div key={index}>
+                                <Star color="yellow" />
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-sm font-medium text-white">
+                            &quot;Ground took the guesswork out of investing for me.
+                            I&apos;m seeing real returns with no hassle.&quot;
+                          </p>
+                          <p className="text-sm font-medium text-white">
+                            @username
+                          </p>
+                        </div>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div className="py-1">
+            <button className="border-2 py-2 px-10 text-white rounded-full">
+              Check all 1000+ reviews
+            </button>
+          </div>
+        </div>
+
+        <div className="min-h-screen bg-[#151424] z-0 rounded-2xl w-screen overflow-hidden relative">
+          <div className="relative flex items-center justify-center">
+            <div className="w-[1000px] h-[1000px] rounded-full bg-transparent flex items-center justify-center">
+              <div className="w-[800px] h-[800px] rounded-full bg-transparent flex items-center justify-center">
+                <div className="w-[600px] h-[600px] rounded-full bg-transparent flex items-center justify-center">
+                  <div className="w-[400px] h-[400px] rounded-full bg-transparent flex items-center justify-center">
+                    <div className="w-[200px] h-[200px] rounded-full bg-transparent" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="py-1">
-          <button className="border-2 py-2 px-10 text-white rounded-full">
-            Check all 1000+ reviews
-          </button>
         </div>
       </div>
     </div>
