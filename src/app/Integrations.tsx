@@ -67,7 +67,7 @@ const Integrations = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full overflow-hidden relative">
+      <div className="flex items-center justify-center w-full overflow-hidden relative  ">
         <div className="z-10 rounded-2xl py-16 flex flex-col items-center justify-center absolute">
           <h1 className="font-bold text-2xl lg:text-5xl text-white px-2 text-center">
             Trusted by 21,000+ customers
@@ -187,13 +187,13 @@ const Integrations = () => {
           </div>
         </div>
 
-        <div className="min-h-screen bg-[#151424] z-0 rounded-2xl w-screen overflow-hidden relative">
+        <div className="min-h-screen bg-[#151424] z-0 rounded-2xl w-screen overflow-hidden">
           <div className="relative flex items-center justify-center">
-            <div className="w-[1000px] h-[1000px] rounded-full bg-transparent flex items-center justify-center">
-              <div className="w-[800px] h-[800px] rounded-full bg-transparent flex items-center justify-center">
-                <div className="w-[600px] h-[600px] rounded-full bg-transparent flex items-center justify-center">
-                  <div className="w-[400px] h-[400px] rounded-full bg-transparent flex items-center justify-center">
-                    <div className="w-[200px] h-[200px] rounded-full bg-transparent" />
+            <div className="w-[1000px] h-[1000px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 borders">
+              <div className="w-[800px] h-[800px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 borders">
+                <div className="w-[600px] h-[600px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 borders">
+                  <div className="w-[400px] h-[400px] rounded-full bg-transparent flex items-center justify-center transition-all duration-300 borders">
+                    <div className="w-[200px] h-[200px] rounded-full bg-transparent transition-all duration-300 borders" />
                   </div>
                 </div>
               </div>
