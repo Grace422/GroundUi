@@ -11,7 +11,7 @@ const Features = () => {
           >
             <feature.icon color='blue'/>
             <div className="flex flex-col items-start gap-4">
-              <h3 className="text-sm">{feature.title}</h3>
+              <h3 className="text-sm lg:text-xl">{feature.title}</h3>
               <p className="text-gray-500 text-start text-sm md:text-lg lg:text-sm">
                 {feature.text}
               </p>

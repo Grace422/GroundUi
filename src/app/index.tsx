@@ -12,7 +12,9 @@ export const Icons = [
         title:"Automatic Expense Tracking"
     },
     {
-        icon: Banana
+        icon: Banana,
+        text:"Easily create and manage budgets to track spending",
+        title:"Custom Goals"
     },
     {
         icon: Table2,
