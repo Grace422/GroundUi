@@ -35,7 +35,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <p className="text-lg text-gray-600">Made with 🩶 by Kwaham Grace, don't ask too much</p>
+                    <p className="text-lg text-gray-600">Made with 🩶 by Kwaham Grace, don&apos;t ask too much</p>
                 </div>
             </div>
         </div>

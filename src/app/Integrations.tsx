@@ -97,7 +97,7 @@ const Integrations = () => {
       </div>
 
       <div className="flex items-center justify-center w-full overflow-hidden relative">
-        <div className="z-10 rounded-2xl py-16 flex flex-col items-center justify-center absolute">
+        <div className="z-10 rounded-2xl py-8 flex flex-col items-center justify-center absolute">
           <h1 className="font-bold text-2xl lg:text-5xl text-white px-2 text-center">
             Trusted by 21,000+ customers
           </h1>

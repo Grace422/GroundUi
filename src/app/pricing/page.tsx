@@ -37,7 +37,7 @@ const Pricing = () => {
       <p className="text-gray-500 text-sm">
         Ground is a demo app.
         <span className="font-bold text-gray-500">
-          You can test the upgrade and won't be charged.
+          You can test the upgrade and won&apos;t be charged.
         </span>
       </p>
     </div>
